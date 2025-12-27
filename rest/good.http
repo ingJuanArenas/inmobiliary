@@ -1,0 +1,34 @@
+### get
+GET http://localhost:8080/houses
+
+###
+GET http://localhost:8080/houses/20
+
+### 
+GET http://localhost:8080/houses/city/Cali
+
+
+### post 
+POST http://localhost:8080/houses
+Content-Type: application/json
+
+{
+    "city": "Medellin",
+    "price": 250000.0,
+    "bedrooms": 3,
+    "bathrooms": 2
+}
+
+### put
+PUT http://localhost:8080/houses/3
+Content-Type: application/json
+
+{
+    "city": "Bogota",
+    "price": 300000.0,
+    "bedrooms": 4,
+    "bathrooms": 3
+}
+
+### delete
+DELETE http://localhost:8080/houses/3

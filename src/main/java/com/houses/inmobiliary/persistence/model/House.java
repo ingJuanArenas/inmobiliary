@@ -15,8 +15,8 @@ public class House {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "address")
-    private String address;
+    @Column(name = "city")
+    private String city;
 
     @Column(name = "price")
     private Double price;
@@ -30,8 +30,8 @@ public class House {
     // Constructors
     public House() {}
 
-    public House(String address, Double price, Integer bedrooms, Integer bathrooms) {
-        this.address = address;
+    public House(String city, Double price, Integer bedrooms, Integer bathrooms) {
+        this.city = city;
         this.price = price;
         this.bedrooms = bedrooms;
         this.bathrooms = bathrooms;
@@ -46,13 +46,7 @@ public class House {
         this.id = id;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
+   
 
     public Double getPrice() {
         return price;
@@ -77,4 +71,12 @@ public class House {
 	public void setBathrooms(Integer bathrooms) {
 		this.bathrooms = bathrooms;
 	}
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 }

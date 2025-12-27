@@ -7,16 +7,18 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
 import com.houses.inmobiliary.domain.dto.HouseDTO;
+import com.houses.inmobiliary.domain.dto.UpdateDTO;
 import com.houses.inmobiliary.persistence.model.House;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface HouseMapper {
     @Mapping(target = "id", ignore = true)
     House toEntity(HouseDTO houseDTO);
 
-    List<HouseDTO> tDtos(List<House> houses);
+    
     HouseDTO toDto(House house);
+    List<HouseDTO> tDtos(List<House> houses);
 
     @Mapping(target = "id", ignore = true)
-    void updateEntityFromDto(HouseDTO houseDTO, @MappingTarget House house);
+    void updateEntityFromDto(UpdateDTO updateDTO, @MappingTarget House house);
 }
