@@ -1,7 +1,7 @@
 package com.houses.inmobiliary.domain.dto;
 
 public record UpdateDTO(
-    String address,
+    String city,
     Double price,
     Integer bedrooms,
     Integer bathrooms
