@@ -20,7 +20,7 @@ Content-Type: application/json
 }
 
 ### put
-PUT http://localhost:8080/houses/3
+PUT http://localhost:8080/houses/9
 Content-Type: application/json
 
 {
@@ -31,4 +31,6 @@ Content-Type: application/json
 }
 
 ### delete
-DELETE http://localhost:8080/houses/3
+DELETE http://localhost:8080/houses/9
+
+
