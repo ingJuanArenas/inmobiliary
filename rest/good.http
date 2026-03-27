@@ -1,8 +1,8 @@
 ### get
 GET http://localhost:8080/houses
-
 ###
 GET http://localhost:8080/houses/20
+
 
 ### 
 GET http://localhost:8080/houses/city/Cali
@@ -11,9 +11,10 @@ GET http://localhost:8080/houses/city/Cali
 ### post 
 POST http://localhost:8080/houses
 Content-Type: application/json
+Authorization: Basic YWRtaW46YWRtaW4xMjM=
 
 {
-    "city": "Medellin",
+    "city": "Medellisadasn",
     "price": 250000.0,
     "bedrooms": 3,
     "bathrooms": 2
@@ -32,5 +33,6 @@ Content-Type: application/json
 
 ### delete
 DELETE http://localhost:8080/houses/9
+Authorization: Basic YWRtaW46YWRtaW4xMjM=
 
 
