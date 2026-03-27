@@ -11,82 +11,39 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "houses")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class House {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "city")
+    @Column(name = "city", nullable = false)
     @NotBlank
     private String city;
 
-    @Column(name = "price")
+    @Column(name = "price",nullable = false)
     @NotNull
     private Double price;
 
-    @Column(name = "bedrooms")
+    @Column(name = "bedrooms", nullable = false)
     @Min(value = 1)
     @NotNull
     private Integer bedrooms;
 
-    @Column(name = "bathrooms")
+    @Column(name = "bathrooms", nullable = false)
     @Min(value = 1)
     @NotNull
     private Integer bathrooms;
 
-    public House() {}
-
-    public House(String city, Double price, Integer bedrooms, Integer bathrooms) {
-        this.city = city;
-        this.price = price;
-        this.bedrooms = bedrooms;
-        this.bathrooms = bathrooms;
-    }
-
-    // Getters and Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-   
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public Integer getBedrooms() {
-        return bedrooms;
-    }
-
-    public void setBedrooms(Integer bedrooms) {
-        this.bedrooms = bedrooms;
-    }
-
-	public Integer getBathrooms() {
-		return bathrooms;
-	}
-
-	public void setBathrooms(Integer bathrooms) {
-		this.bathrooms = bathrooms;
-	}
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
 }
