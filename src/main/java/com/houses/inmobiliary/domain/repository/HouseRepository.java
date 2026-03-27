@@ -11,7 +11,7 @@ public interface HouseRepository {
     List<HouseDTO> getAll();
     HouseDTO getById(Long id);
     List<HouseDTO> getByCity(String city);
-    HouseDTO create(House house);
+    HouseDTO create(HouseDTO house);
     HouseDTO update(Long id, UpdateDTO houseDTO);
     void delete(Long id);
 
