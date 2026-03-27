@@ -8,20 +8,20 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 
-import com.houses.inmobiliary.domain.exceptions.HouseAlreadyExists;
-import com.houses.inmobiliary.domain.exceptions.HouseNotFoundException;
+import com.houses.inmobiliary.domain.exceptions.AlreadyExists;
+import com.houses.inmobiliary.domain.exceptions.NotFoundException;
 
 @RestControllerAdvice
 public class HouseExceptionHandler {
 
-    @ExceptionHandler(HouseNotFoundException.class)
-    public ResponseEntity<Error> handleHouseNotFoundException(HouseNotFoundException ex) {
+    @ExceptionHandler(NotFoundException.class)
+    public ResponseEntity<Error> handleHouseNotFoundException(NotFoundException ex) {
         Error error = new Error("NOT_FOUND", ex.getMessage());
         return ResponseEntity.status(HttpStatusCode.valueOf(404)).body(error);
     }
 
-    @ExceptionHandler(HouseAlreadyExists.class)
-    public ResponseEntity<Error> handleHouseAlreadyExists(HouseAlreadyExists ex) {
+    @ExceptionHandler(AlreadyExists.class)
+    public ResponseEntity<Error> handleHouseAlreadyExists(AlreadyExists ex) {
         Error error = new Error("CONFLICT", ex.getMessage());
         return ResponseEntity.status(HttpStatusCode.valueOf(409)).body(error);
     }
