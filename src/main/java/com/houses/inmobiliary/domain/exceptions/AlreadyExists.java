@@ -1,0 +1,7 @@
+package com.houses.inmobiliary.domain.exceptions;
+
+public class AlreadyExists extends RuntimeException {
+    public AlreadyExists(String message) {
+        super(message);
+    }
+}

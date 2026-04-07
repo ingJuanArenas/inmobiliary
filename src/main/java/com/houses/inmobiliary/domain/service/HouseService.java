@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.houses.inmobiliary.domain.dto.HouseDTO;
 import com.houses.inmobiliary.domain.dto.UpdateDTO;
+import com.houses.inmobiliary.domain.exceptions.NotFoundException;
 import com.houses.inmobiliary.domain.repository.HouseRepository;
 import com.houses.inmobiliary.persistence.model.House;
 
@@ -19,7 +20,9 @@ public class HouseService {
     }
 
     public List<HouseDTO> getAllHouses() {
-        return houseRepository.getAll();
+        var houses = houseRepository.getAll();
+        if (houses.isEmpty()) throw new NotFoundException("Content not found");
+        return houses ;
     }
 
     public HouseDTO getHouseById(Long id) {
@@ -27,10 +30,14 @@ public class HouseService {
     }
 
     public List<HouseDTO> getHousesByCity(String city) {
-        return houseRepository.getByCity(city);
+        var houses = houseRepository.getByCity(city);
+        if (houses.isEmpty()){
+            throw new NotFoundException("No content found for city: " + city);
+        }
+        return houses;
     }
 
-    public HouseDTO createHouse(House houseDTO) {
+    public HouseDTO createHouse(HouseDTO houseDTO) {
         return houseRepository.create(houseDTO);
     }
 

@@ -14,6 +14,10 @@ import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "houses")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class House {
 
     @Id
