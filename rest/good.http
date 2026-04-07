@@ -33,6 +33,5 @@ Content-Type: application/json
 
 ### delete
 DELETE http://localhost:8080/houses/9
-Authorization: Basic YWRtaW46YWRtaW4xMjM=
 
 

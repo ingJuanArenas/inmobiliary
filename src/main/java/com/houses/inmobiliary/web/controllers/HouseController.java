@@ -68,7 +68,8 @@ public class HouseController {
         @ApiResponse(responseCode = "200", description = "House created successfully."),
         @ApiResponse(responseCode = "400", description = "Invalid house data provided.")
     })
-    public ResponseEntity<HouseDTO> createHouse(@Valid @org.springframework.web.bind.annotation.RequestBody HouseDTO house) {
+    public ResponseEntity<HouseDTO> createHouse(@Valid @org.springframework.web.bind.annotation.RequestBody House house) {
+        System.out.println("Received house data: " + house.getCity() + house.getPrice());
         return ResponseEntity.ok(houseService.createHouse(house));
     }
 
